@@ -10,15 +10,16 @@ import Foundation
 import RealmSwift
 
 public class Task: Object{
-    @objc dynamic var id = UUID().uuidString
-    @objc public dynamic var title: String?
-    @objc public dynamic var fireDate: Date?
-    
+    dynamic var id = UUID().uuidString
+    public dynamic var title: String?
+    public dynamic var fireDate: Date?
+    public dynamic var finish: Bool?
     public override static func primaryKey() -> String? { return "id" }
     
     public convenience init(title: String, fireDate: Date?) {
         self.init()
         self.title = title
         self.fireDate = fireDate
+        self.finish = false
     }
 }

@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  TLBaseVC.swift
 //  TodoListApp
 //
 //  Created by Charlie on 6/6/20.
@@ -7,14 +7,13 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
-class ViewController: UIViewController, TLStoryboarded {
-
+class TLBaseVC: UIViewController, TLStoryboarded{
+    var disposeBag = DisposeBag()
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
     }
-
-
 }
-
