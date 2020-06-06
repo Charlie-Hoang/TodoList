@@ -16,6 +16,11 @@ target 'TodoListApp' do
     framework_pods
 end
 
-#target 'TodoListAppDB' do
-#    project 'TwitSplitCore/TwitSplitCore.xcodeproj'
-#end
+target 'TodoListDB' do
+    project 'TodoListDB/TodoListDB.xcodeproj'
+    pod 'RealmSwift'
+end
+target 'TodoListDBTests' do
+    project 'TodoListDB/TodoListDB.xcodeproj'
+    pod 'RealmSwift'
+end
