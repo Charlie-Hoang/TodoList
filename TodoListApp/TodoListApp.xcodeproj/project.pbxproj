@@ -7,21 +7,43 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CB777E61248BD8F2008B6BEB /* TLCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB777E60248BD8F2008B6BEB /* TLCoordinator.swift */; };
-		CB777E64248BD93C008B6BEB /* TLMainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB777E63248BD93C008B6BEB /* TLMainCoordinator.swift */; };
-		CB777E67248BD9EF008B6BEB /* TLStoryboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB777E66248BD9EF008B6BEB /* TLStoryboarded.swift */; };
-		CB777E6C248BDE23008B6BEB /* TLBaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB777E6B248BDE23008B6BEB /* TLBaseVC.swift */; };
-		CB777E71248BDEB4008B6BEB /* TLHomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB777E6F248BDEB4008B6BEB /* TLHomeVC.swift */; };
-		CB777E77248BE297008B6BEB /* TLNewTaskVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB777E76248BE297008B6BEB /* TLNewTaskVC.swift */; };
-		CB777E79248BE5DF008B6BEB /* TLNotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB777E78248BE5DF008B6BEB /* TLNotificationService.swift */; };
+		CB6A8E38248E437C00F5A5A5 /* Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6A8E37248E437C00F5A5A5 /* Label.swift */; };
+		CB6A8E3A248E7BD400F5A5A5 /* TLHomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6A8E39248E7BD400F5A5A5 /* TLHomeViewModel.swift */; };
+		CB6A8E3C248E7D1B00F5A5A5 /* TLVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6A8E3B248E7D1B00F5A5A5 /* TLVC.swift */; };
+		CB6A8E3E248E80F900F5A5A5 /* Identifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6A8E3D248E80F900F5A5A5 /* Identifier.swift */; };
+		CB6A8E40248E811D00F5A5A5 /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6A8E3F248E811D00F5A5A5 /* Cell.swift */; };
+		CB6A8E42248E81C800F5A5A5 /* TLHomeCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6A8E41248E81C800F5A5A5 /* TLHomeCellViewModel.swift */; };
+		CB6A8E44248E827F00F5A5A5 /* String+Date+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6A8E43248E827F00F5A5A5 /* String+Date+Ext.swift */; };
+		CB6A8E48248E893100F5A5A5 /* TLNewTaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6A8E47248E893100F5A5A5 /* TLNewTaskViewModel.swift */; };
+		CB777ECD248DD0CE008B6BEB /* TLDBServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB777ECB248DD0CE008B6BEB /* TLDBServiceTests.swift */; };
+		CB777ECE248DD0CE008B6BEB /* TLDBInMemoryConfiguartion.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB777ECC248DD0CE008B6BEB /* TLDBInMemoryConfiguartion.swift */; };
+		CB777EFC248DD8F2008B6BEB /* TLHomeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB777EE9248DD8F2008B6BEB /* TLHomeCell.xib */; };
+		CB777EFD248DD8F2008B6BEB /* TLHomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB777EEA248DD8F2008B6BEB /* TLHomeCell.swift */; };
+		CB777EFE248DD8F2008B6BEB /* TLHomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB777EEB248DD8F2008B6BEB /* TLHomeVC.swift */; };
+		CB777EFF248DD8F2008B6BEB /* TLNewTaskVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB777EEF248DD8F2008B6BEB /* TLNewTaskVC.swift */; };
+		CB777F00248DD8F2008B6BEB /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB777EF2248DD8F2008B6BEB /* Task.swift */; };
+		CB777F01248DD8F2008B6BEB /* TLBaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB777EF4248DD8F2008B6BEB /* TLBaseVC.swift */; };
+		CB777F02248DD8F2008B6BEB /* TLStoryboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB777EF6248DD8F2008B6BEB /* TLStoryboarded.swift */; };
+		CB777F03248DD8F2008B6BEB /* TLCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB777EF7248DD8F2008B6BEB /* TLCoordinator.swift */; };
+		CB777F04248DD8F2008B6BEB /* TLDBConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB777EF9248DD8F2008B6BEB /* TLDBConfiguration.swift */; };
+		CB777F05248DD8F2008B6BEB /* TLNotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB777EFA248DD8F2008B6BEB /* TLNotificationService.swift */; };
+		CB777F06248DD8F2008B6BEB /* TLDBService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB777EFB248DD8F2008B6BEB /* TLDBService.swift */; };
+		CB777F0D248DD8FF008B6BEB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB777F08248DD8FF008B6BEB /* Assets.xcassets */; };
+		CB777F0E248DD8FF008B6BEB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB777F09248DD8FF008B6BEB /* LaunchScreen.storyboard */; };
+		CB777F0F248DD8FF008B6BEB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB777F0B248DD8FF008B6BEB /* Main.storyboard */; };
+		CB777F13248DDA70008B6BEB /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CB777F12248DDA70008B6BEB /* Default-568h@2x.png */; };
+		CB777F18248DE847008B6BEB /* TLHomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB777F17248DE847008B6BEB /* TLHomeCoordinator.swift */; };
+		CB777F1A248E309C008B6BEB /* TLNewTaskCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB777F19248E309C008B6BEB /* TLNewTaskCoordinator.swift */; };
 		CBDE7490248B417D0032F0F8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBDE748F248B417D0032F0F8 /* AppDelegate.swift */; };
 		CBDE7492248B417D0032F0F8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBDE7491248B417D0032F0F8 /* SceneDelegate.swift */; };
-		CBDE7494248B417D0032F0F8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBDE7493248B417D0032F0F8 /* ViewController.swift */; };
-		CBDE7497248B417D0032F0F8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBDE7495248B417D0032F0F8 /* Main.storyboard */; };
-		CBDE7499248B417F0032F0F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBDE7498248B417F0032F0F8 /* Assets.xcassets */; };
-		CBDE749C248B417F0032F0F8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBDE749A248B417F0032F0F8 /* LaunchScreen.storyboard */; };
 		CBDE74A7248B417F0032F0F8 /* TodoListAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBDE74A6248B417F0032F0F8 /* TodoListAppTests.swift */; };
+		CBF650A2248F6AED00AE9380 /* TLLabelInHomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF650A1248F6AED00AE9380 /* TLLabelInHomeViewModel.swift */; };
+		CBF650A4248F733500AE9380 /* UIView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF650A3248F733500AE9380 /* UIView+Ext.swift */; };
+		CBF650A6248F8F0E00AE9380 /* UITextField+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF650A5248F8F0E00AE9380 /* UITextField+Ext.swift */; };
+		CBF650AA248F991900AE9380 /* RepeatType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF650A9248F991900AE9380 /* RepeatType.swift */; };
+		CBF650AC248FFF0400AE9380 /* SortType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF650AB248FFF0400AE9380 /* SortType.swift */; };
 		D517348E42188EBBDF9EFE8F /* Pods_TodoListApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 467C9D941B0B67A62A46716F /* Pods_TodoListApp.framework */; };
+		EC5EF4B72AB5A8A32F91DDE4 /* Pods_TodoListAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA66A6688B9399D99BC41B9A /* Pods_TodoListAppTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,25 +59,49 @@
 /* Begin PBXFileReference section */
 		467C9D941B0B67A62A46716F /* Pods_TodoListApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TodoListApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A914E75103DE97D77FF0D13 /* Pods-TodoListApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodoListApp.release.xcconfig"; path = "Target Support Files/Pods-TodoListApp/Pods-TodoListApp.release.xcconfig"; sourceTree = "<group>"; };
+		684586E8CB909A7A40C456A9 /* Pods-TodoListAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodoListAppTests.debug.xcconfig"; path = "Target Support Files/Pods-TodoListAppTests/Pods-TodoListAppTests.debug.xcconfig"; sourceTree = "<group>"; };
+		81C43ACCF7E6A48FC0271F73 /* Pods-TodoListAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodoListAppTests.release.xcconfig"; path = "Target Support Files/Pods-TodoListAppTests/Pods-TodoListAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		B1FC45A1494B23BD56FD0122 /* Pods-TodoListApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodoListApp.debug.xcconfig"; path = "Target Support Files/Pods-TodoListApp/Pods-TodoListApp.debug.xcconfig"; sourceTree = "<group>"; };
-		CB777E60248BD8F2008B6BEB /* TLCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TLCoordinator.swift; sourceTree = "<group>"; };
-		CB777E63248BD93C008B6BEB /* TLMainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TLMainCoordinator.swift; sourceTree = "<group>"; };
-		CB777E66248BD9EF008B6BEB /* TLStoryboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TLStoryboarded.swift; sourceTree = "<group>"; };
-		CB777E6B248BDE23008B6BEB /* TLBaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TLBaseVC.swift; sourceTree = "<group>"; };
-		CB777E6F248BDEB4008B6BEB /* TLHomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TLHomeVC.swift; sourceTree = "<group>"; };
-		CB777E76248BE297008B6BEB /* TLNewTaskVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TLNewTaskVC.swift; sourceTree = "<group>"; };
-		CB777E78248BE5DF008B6BEB /* TLNotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TLNotificationService.swift; sourceTree = "<group>"; };
+		CB6A8E37248E437C00F5A5A5 /* Label.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Label.swift; sourceTree = "<group>"; };
+		CB6A8E39248E7BD400F5A5A5 /* TLHomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TLHomeViewModel.swift; sourceTree = "<group>"; };
+		CB6A8E3B248E7D1B00F5A5A5 /* TLVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TLVC.swift; sourceTree = "<group>"; };
+		CB6A8E3D248E80F900F5A5A5 /* Identifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Identifier.swift; sourceTree = "<group>"; };
+		CB6A8E3F248E811D00F5A5A5 /* Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
+		CB6A8E41248E81C800F5A5A5 /* TLHomeCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TLHomeCellViewModel.swift; sourceTree = "<group>"; };
+		CB6A8E43248E827F00F5A5A5 /* String+Date+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Date+Ext.swift"; sourceTree = "<group>"; };
+		CB6A8E47248E893100F5A5A5 /* TLNewTaskViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TLNewTaskViewModel.swift; sourceTree = "<group>"; };
+		CB777ECB248DD0CE008B6BEB /* TLDBServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TLDBServiceTests.swift; sourceTree = "<group>"; };
+		CB777ECC248DD0CE008B6BEB /* TLDBInMemoryConfiguartion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TLDBInMemoryConfiguartion.swift; sourceTree = "<group>"; };
+		CB777EE9248DD8F2008B6BEB /* TLHomeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TLHomeCell.xib; sourceTree = "<group>"; };
+		CB777EEA248DD8F2008B6BEB /* TLHomeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TLHomeCell.swift; sourceTree = "<group>"; };
+		CB777EEB248DD8F2008B6BEB /* TLHomeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TLHomeVC.swift; sourceTree = "<group>"; };
+		CB777EEF248DD8F2008B6BEB /* TLNewTaskVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TLNewTaskVC.swift; sourceTree = "<group>"; };
+		CB777EF2248DD8F2008B6BEB /* Task.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		CB777EF4248DD8F2008B6BEB /* TLBaseVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TLBaseVC.swift; sourceTree = "<group>"; };
+		CB777EF6248DD8F2008B6BEB /* TLStoryboarded.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TLStoryboarded.swift; sourceTree = "<group>"; };
+		CB777EF7248DD8F2008B6BEB /* TLCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TLCoordinator.swift; sourceTree = "<group>"; };
+		CB777EF9248DD8F2008B6BEB /* TLDBConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TLDBConfiguration.swift; sourceTree = "<group>"; };
+		CB777EFA248DD8F2008B6BEB /* TLNotificationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TLNotificationService.swift; sourceTree = "<group>"; };
+		CB777EFB248DD8F2008B6BEB /* TLDBService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TLDBService.swift; sourceTree = "<group>"; };
+		CB777F08248DD8FF008B6BEB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CB777F0A248DD8FF008B6BEB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		CB777F0C248DD8FF008B6BEB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		CB777F12248DDA70008B6BEB /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		CB777F14248DDE07008B6BEB /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CB777F16248DDE84008B6BEB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CB777F17248DE847008B6BEB /* TLHomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TLHomeCoordinator.swift; sourceTree = "<group>"; };
+		CB777F19248E309C008B6BEB /* TLNewTaskCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TLNewTaskCoordinator.swift; sourceTree = "<group>"; };
 		CBDE748C248B417D0032F0F8 /* TodoListApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TodoListApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBDE748F248B417D0032F0F8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CBDE7491248B417D0032F0F8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		CBDE7493248B417D0032F0F8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		CBDE7496248B417D0032F0F8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		CBDE7498248B417F0032F0F8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		CBDE749B248B417F0032F0F8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		CBDE749D248B417F0032F0F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CBDE74A2248B417F0032F0F8 /* TodoListAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TodoListAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBDE74A6248B417F0032F0F8 /* TodoListAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListAppTests.swift; sourceTree = "<group>"; };
-		CBDE74A8248B417F0032F0F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CBF650A1248F6AED00AE9380 /* TLLabelInHomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TLLabelInHomeViewModel.swift; sourceTree = "<group>"; };
+		CBF650A3248F733500AE9380 /* UIView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Ext.swift"; sourceTree = "<group>"; };
+		CBF650A5248F8F0E00AE9380 /* UITextField+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Ext.swift"; sourceTree = "<group>"; };
+		CBF650A9248F991900AE9380 /* RepeatType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepeatType.swift; sourceTree = "<group>"; };
+		CBF650AB248FFF0400AE9380 /* SortType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortType.swift; sourceTree = "<group>"; };
+		EA66A6688B9399D99BC41B9A /* Pods_TodoListAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TodoListAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +117,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC5EF4B72AB5A8A32F91DDE4 /* Pods_TodoListAppTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,6 +129,8 @@
 			children = (
 				B1FC45A1494B23BD56FD0122 /* Pods-TodoListApp.debug.xcconfig */,
 				5A914E75103DE97D77FF0D13 /* Pods-TodoListApp.release.xcconfig */,
+				684586E8CB909A7A40C456A9 /* Pods-TodoListAppTests.debug.xcconfig */,
+				81C43ACCF7E6A48FC0271F73 /* Pods-TodoListAppTests.release.xcconfig */,
 			);
 			name = Pods;
 			path = ../Pods;
@@ -91,17 +140,9 @@
 			isa = PBXGroup;
 			children = (
 				467C9D941B0B67A62A46716F /* Pods_TodoListApp.framework */,
+				EA66A6688B9399D99BC41B9A /* Pods_TodoListAppTests.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		CB777E5F248BD8C2008B6BEB /* Protocols */ = {
-			isa = PBXGroup;
-			children = (
-				CB777E60248BD8F2008B6BEB /* TLCoordinator.swift */,
-				CB777E66248BD9EF008B6BEB /* TLStoryboarded.swift */,
-			);
-			path = Protocols;
 			sourceTree = "<group>";
 		};
 		CB777E62248BD91B008B6BEB /* AppDelegate */ = {
@@ -109,89 +150,156 @@
 			children = (
 				CBDE748F248B417D0032F0F8 /* AppDelegate.swift */,
 				CBDE7491248B417D0032F0F8 /* SceneDelegate.swift */,
-				CB777E63248BD93C008B6BEB /* TLMainCoordinator.swift */,
 			);
 			path = AppDelegate;
 			sourceTree = "<group>";
 		};
-		CB777E65248BD9D0008B6BEB /* Extension */ = {
+		CB777EE4248DD8F2008B6BEB /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				CB777EF1248DD8F2008B6BEB /* Models */,
+				CB777EE5248DD8F2008B6BEB /* Scenes */,
+				CB777F1B248E3344008B6BEB /* Coordinator */,
+				CB777EF3248DD8F2008B6BEB /* Common */,
+				CB777EF8248DD8F2008B6BEB /* Services */,
 			);
-			path = Extension;
+			path = Sources;
 			sourceTree = "<group>";
 		};
-		CB777E68248BDCF1008B6BEB /* Scenes */ = {
+		CB777EE5248DD8F2008B6BEB /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				CB777E73248BE264008B6BEB /* NewTask */,
-				CB777E69248BDDA5008B6BEB /* Home */,
+				CB777EE6248DD8F2008B6BEB /* Home */,
+				CB777EEC248DD8F2008B6BEB /* NewTask */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
 		};
-		CB777E69248BDDA5008B6BEB /* Home */ = {
+		CB777EE6248DD8F2008B6BEB /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				CB777E6E248BDE8B008B6BEB /* Views */,
-				CB777E6D248BDE60008B6BEB /* ViewModels */,
+				CB777EE7248DD8F2008B6BEB /* ViewModels */,
+				CB777EE8248DD8F2008B6BEB /* Views */,
 			);
 			path = Home;
 			sourceTree = "<group>";
 		};
-		CB777E6A248BDE05008B6BEB /* Common */ = {
+		CB777EE7248DD8F2008B6BEB /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				CB777E6B248BDE23008B6BEB /* TLBaseVC.swift */,
-			);
-			path = Common;
-			sourceTree = "<group>";
-		};
-		CB777E6D248BDE60008B6BEB /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
+				CB6A8E39248E7BD400F5A5A5 /* TLHomeViewModel.swift */,
+				CB6A8E41248E81C800F5A5A5 /* TLHomeCellViewModel.swift */,
+				CBF650A1248F6AED00AE9380 /* TLLabelInHomeViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
-		CB777E6E248BDE8B008B6BEB /* Views */ = {
+		CB777EE8248DD8F2008B6BEB /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				CB777E6F248BDEB4008B6BEB /* TLHomeVC.swift */,
+				CB777EE9248DD8F2008B6BEB /* TLHomeCell.xib */,
+				CB777EEA248DD8F2008B6BEB /* TLHomeCell.swift */,
+				CB777EEB248DD8F2008B6BEB /* TLHomeVC.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
 		};
-		CB777E73248BE264008B6BEB /* NewTask */ = {
+		CB777EEC248DD8F2008B6BEB /* NewTask */ = {
 			isa = PBXGroup;
 			children = (
-				CB777E75248BE278008B6BEB /* ViewModels */,
-				CB777E74248BE272008B6BEB /* Views */,
+				CB777EED248DD8F2008B6BEB /* ViewModels */,
+				CB777EEE248DD8F2008B6BEB /* Views */,
 			);
 			path = NewTask;
 			sourceTree = "<group>";
 		};
-		CB777E74248BE272008B6BEB /* Views */ = {
+		CB777EED248DD8F2008B6BEB /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				CB777E76248BE297008B6BEB /* TLNewTaskVC.swift */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		CB777E75248BE278008B6BEB /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
+				CB6A8E47248E893100F5A5A5 /* TLNewTaskViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
-		CB777E7A248BF61A008B6BEB /* Services */ = {
+		CB777EEE248DD8F2008B6BEB /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				CB777E78248BE5DF008B6BEB /* TLNotificationService.swift */,
+				CB777EEF248DD8F2008B6BEB /* TLNewTaskVC.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		CB777EF0248DD8F2008B6BEB /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				CB6A8E43248E827F00F5A5A5 /* String+Date+Ext.swift */,
+				CBF650A3248F733500AE9380 /* UIView+Ext.swift */,
+				CBF650A5248F8F0E00AE9380 /* UITextField+Ext.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		CB777EF1248DD8F2008B6BEB /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CB777EF2248DD8F2008B6BEB /* Task.swift */,
+				CB6A8E37248E437C00F5A5A5 /* Label.swift */,
+				CBF650A9248F991900AE9380 /* RepeatType.swift */,
+				CBF650AB248FFF0400AE9380 /* SortType.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		CB777EF3248DD8F2008B6BEB /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				CB777EF5248DD8F2008B6BEB /* Protocols */,
+				CB777EF0248DD8F2008B6BEB /* Extension */,
+				CB777EF4248DD8F2008B6BEB /* TLBaseVC.swift */,
+				CB6A8E3D248E80F900F5A5A5 /* Identifier.swift */,
+				CB6A8E3F248E811D00F5A5A5 /* Cell.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		CB777EF5248DD8F2008B6BEB /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				CB777EF6248DD8F2008B6BEB /* TLStoryboarded.swift */,
+				CB777EF7248DD8F2008B6BEB /* TLCoordinator.swift */,
+				CB6A8E3B248E7D1B00F5A5A5 /* TLVC.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		CB777EF8248DD8F2008B6BEB /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				CB777EF9248DD8F2008B6BEB /* TLDBConfiguration.swift */,
+				CB777EFA248DD8F2008B6BEB /* TLNotificationService.swift */,
+				CB777EFB248DD8F2008B6BEB /* TLDBService.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		CB777F07248DD8FF008B6BEB /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				CB777F12248DDA70008B6BEB /* Default-568h@2x.png */,
+				CB777F08248DD8FF008B6BEB /* Assets.xcassets */,
+				CB777F09248DD8FF008B6BEB /* LaunchScreen.storyboard */,
+				CB777F0B248DD8FF008B6BEB /* Main.storyboard */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		CB777F1B248E3344008B6BEB /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				CB777F17248DE847008B6BEB /* TLHomeCoordinator.swift */,
+				CB777F19248E309C008B6BEB /* TLNewTaskCoordinator.swift */,
+			);
+			path = Coordinator;
 			sourceTree = "<group>";
 		};
 		CBDE7483248B417D0032F0F8 = {
@@ -217,17 +325,10 @@
 		CBDE748E248B417D0032F0F8 /* TodoListApp */ = {
 			isa = PBXGroup;
 			children = (
-				CB777E7A248BF61A008B6BEB /* Services */,
-				CB777E6A248BDE05008B6BEB /* Common */,
-				CB777E68248BDCF1008B6BEB /* Scenes */,
-				CB777E65248BD9D0008B6BEB /* Extension */,
+				CB777F07248DD8FF008B6BEB /* Resources */,
+				CB777EE4248DD8F2008B6BEB /* Sources */,
 				CB777E62248BD91B008B6BEB /* AppDelegate */,
-				CB777E5F248BD8C2008B6BEB /* Protocols */,
-				CBDE7493248B417D0032F0F8 /* ViewController.swift */,
-				CBDE7495248B417D0032F0F8 /* Main.storyboard */,
-				CBDE7498248B417F0032F0F8 /* Assets.xcassets */,
-				CBDE749A248B417F0032F0F8 /* LaunchScreen.storyboard */,
-				CBDE749D248B417F0032F0F8 /* Info.plist */,
+				CB777F14248DDE07008B6BEB /* Info.plist */,
 			);
 			path = TodoListApp;
 			sourceTree = "<group>";
@@ -235,8 +336,10 @@
 		CBDE74A5248B417F0032F0F8 /* TodoListAppTests */ = {
 			isa = PBXGroup;
 			children = (
+				CB777ECC248DD0CE008B6BEB /* TLDBInMemoryConfiguartion.swift */,
+				CB777ECB248DD0CE008B6BEB /* TLDBServiceTests.swift */,
 				CBDE74A6248B417F0032F0F8 /* TodoListAppTests.swift */,
-				CBDE74A8248B417F0032F0F8 /* Info.plist */,
+				CB777F16248DDE84008B6BEB /* Info.plist */,
 			);
 			path = TodoListAppTests;
 			sourceTree = "<group>";
@@ -267,9 +370,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CBDE74AE248B417F0032F0F8 /* Build configuration list for PBXNativeTarget "TodoListAppTests" */;
 			buildPhases = (
+				9102730B7803BA59AC971E7A /* [CP] Check Pods Manifest.lock */,
 				CBDE749E248B417F0032F0F8 /* Sources */,
 				CBDE749F248B417F0032F0F8 /* Frameworks */,
 				CBDE74A0248B417F0032F0F8 /* Resources */,
+				D3546D508668393EAA267C31 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -324,9 +429,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CBDE749C248B417F0032F0F8 /* LaunchScreen.storyboard in Resources */,
-				CBDE7499248B417F0032F0F8 /* Assets.xcassets in Resources */,
-				CBDE7497248B417D0032F0F8 /* Main.storyboard in Resources */,
+				CB777F0E248DD8FF008B6BEB /* LaunchScreen.storyboard in Resources */,
+				CB777F0D248DD8FF008B6BEB /* Assets.xcassets in Resources */,
+				CB777EFC248DD8F2008B6BEB /* TLHomeCell.xib in Resources */,
+				CB777F0F248DD8FF008B6BEB /* Main.storyboard in Resources */,
+				CB777F13248DDA70008B6BEB /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -355,6 +462,45 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TodoListApp/Pods-TodoListApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9102730B7803BA59AC971E7A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TodoListAppTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D3546D508668393EAA267C31 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TodoListAppTests/Pods-TodoListAppTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TodoListAppTests/Pods-TodoListAppTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TodoListAppTests/Pods-TodoListAppTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		DF8C33E06F4A62A0A6D799F8 /* [CP] Check Pods Manifest.lock */ = {
@@ -386,16 +532,33 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CBDE7494248B417D0032F0F8 /* ViewController.swift in Sources */,
+				CB777EFD248DD8F2008B6BEB /* TLHomeCell.swift in Sources */,
 				CBDE7490248B417D0032F0F8 /* AppDelegate.swift in Sources */,
-				CB777E61248BD8F2008B6BEB /* TLCoordinator.swift in Sources */,
-				CB777E71248BDEB4008B6BEB /* TLHomeVC.swift in Sources */,
-				CB777E64248BD93C008B6BEB /* TLMainCoordinator.swift in Sources */,
+				CB777EFF248DD8F2008B6BEB /* TLNewTaskVC.swift in Sources */,
+				CBF650A2248F6AED00AE9380 /* TLLabelInHomeViewModel.swift in Sources */,
+				CB777F1A248E309C008B6BEB /* TLNewTaskCoordinator.swift in Sources */,
+				CB777F04248DD8F2008B6BEB /* TLDBConfiguration.swift in Sources */,
+				CBF650A6248F8F0E00AE9380 /* UITextField+Ext.swift in Sources */,
+				CB6A8E42248E81C800F5A5A5 /* TLHomeCellViewModel.swift in Sources */,
+				CB6A8E3A248E7BD400F5A5A5 /* TLHomeViewModel.swift in Sources */,
+				CBF650A4248F733500AE9380 /* UIView+Ext.swift in Sources */,
+				CB777EFE248DD8F2008B6BEB /* TLHomeVC.swift in Sources */,
+				CB6A8E48248E893100F5A5A5 /* TLNewTaskViewModel.swift in Sources */,
+				CB777F03248DD8F2008B6BEB /* TLCoordinator.swift in Sources */,
+				CB6A8E3C248E7D1B00F5A5A5 /* TLVC.swift in Sources */,
+				CB777F06248DD8F2008B6BEB /* TLDBService.swift in Sources */,
+				CB6A8E3E248E80F900F5A5A5 /* Identifier.swift in Sources */,
+				CB6A8E38248E437C00F5A5A5 /* Label.swift in Sources */,
+				CB777F18248DE847008B6BEB /* TLHomeCoordinator.swift in Sources */,
+				CB777F05248DD8F2008B6BEB /* TLNotificationService.swift in Sources */,
+				CB6A8E44248E827F00F5A5A5 /* String+Date+Ext.swift in Sources */,
+				CB777F01248DD8F2008B6BEB /* TLBaseVC.swift in Sources */,
+				CB777F00248DD8F2008B6BEB /* Task.swift in Sources */,
+				CBF650AC248FFF0400AE9380 /* SortType.swift in Sources */,
 				CBDE7492248B417D0032F0F8 /* SceneDelegate.swift in Sources */,
-				CB777E6C248BDE23008B6BEB /* TLBaseVC.swift in Sources */,
-				CB777E67248BD9EF008B6BEB /* TLStoryboarded.swift in Sources */,
-				CB777E79248BE5DF008B6BEB /* TLNotificationService.swift in Sources */,
-				CB777E77248BE297008B6BEB /* TLNewTaskVC.swift in Sources */,
+				CB777F02248DD8F2008B6BEB /* TLStoryboarded.swift in Sources */,
+				CBF650AA248F991900AE9380 /* RepeatType.swift in Sources */,
+				CB6A8E40248E811D00F5A5A5 /* Cell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -403,7 +566,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB777ECE248DD0CE008B6BEB /* TLDBInMemoryConfiguartion.swift in Sources */,
 				CBDE74A7248B417F0032F0F8 /* TodoListAppTests.swift in Sources */,
+				CB777ECD248DD0CE008B6BEB /* TLDBServiceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -418,20 +583,20 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		CBDE7495248B417D0032F0F8 /* Main.storyboard */ = {
+		CB777F09248DD8FF008B6BEB /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				CBDE7496248B417D0032F0F8 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		CBDE749A248B417F0032F0F8 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				CBDE749B248B417F0032F0F8 /* Base */,
+				CB777F0A248DD8FF008B6BEB /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		CB777F0B248DD8FF008B6BEB /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CB777F0C248DD8FF008B6BEB /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -559,6 +724,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VVYWH469LG;
 				INFOPLIST_FILE = TodoListApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -578,6 +744,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VVYWH469LG;
 				INFOPLIST_FILE = TodoListApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -591,6 +758,7 @@
 		};
 		CBDE74AF248B417F0032F0F8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 684586E8CB909A7A40C456A9 /* Pods-TodoListAppTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -613,6 +781,7 @@
 		};
 		CBDE74B0248B417F0032F0F8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 81C43ACCF7E6A48FC0271F73 /* Pods-TodoListAppTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";

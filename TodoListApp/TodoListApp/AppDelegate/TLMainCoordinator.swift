@@ -19,5 +19,6 @@ class TLMainCoordinator: TLCoordinator {
     func start() {
         let vc = TLHomeVC.instantiate()
         navigationController.pushViewController(vc, animated: false)
+        
     }
 }

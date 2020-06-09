@@ -2,9 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:TodoListDB/TodoListDB.xcodeproj">
-   </FileRef>
-   <FileRef
       location = "group:TodoListApp/TodoListApp.xcodeproj">
    </FileRef>
    <FileRef

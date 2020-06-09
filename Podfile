@@ -9,6 +9,7 @@ inhibit_all_warnings!
 def framework_pods
     pod 'RxSwift'
     pod 'RxCocoa'
+    pod 'RealmSwift', '~> 3.20.0'
 end
 
 target 'TodoListApp' do
@@ -16,11 +17,7 @@ target 'TodoListApp' do
     framework_pods
 end
 
-target 'TodoListDB' do
-    project 'TodoListDB/TodoListDB.xcodeproj'
-    pod 'RealmSwift'
-end
-target 'TodoListDBTests' do
-    project 'TodoListDB/TodoListDB.xcodeproj'
+target 'TodoListAppTests' do
+    project 'TodoListApp/TodoListApp.xcodeproj'
     pod 'RealmSwift'
 end
