@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TLHomeVC: TLBaseVC, TLVC {
+class TLHomeVC: BaseVC, TLVC {
     
     var viewModel: TLHomeViewModel!
     
@@ -82,11 +82,13 @@ extension TLHomeVC{
         }).disposed(by: disposeBag)
         //labels
         viewModel.output.listLabels.asObservable().bind(to: labelsPickerView.rx.itemTitles) { _, item in
-            self.navigationItem.leftBarButtonItem = self.createBarButton(title: item, image: nil, selector: #selector(self.category))
+            
             return "\(item)"
         }.disposed(by: disposeBag)
         labelsPickerView.rx.itemSelected.asObservable().subscribe(onNext: {item in
-            self.viewModel.input.labelSelectedIndex.onNext(item.row)
+            print("item selected: \(item.row)")
+            self.navigationItem.leftBarButtonItem = self.createBarButton(title: self.viewModel.labelToDisplay[item.row], image: nil, selector: #selector(self.category))
+            self.viewModel.input.labelSelectedIndex.accept(item.row)
         }).disposed(by: disposeBag)
         //sort
         viewModel.output.listSorts.asObservable().bind(to: sortPickerView.rx.itemTitles) { _, item in
@@ -94,10 +96,10 @@ extension TLHomeVC{
             return "\(item.toString())"
         }.disposed(by: disposeBag)
         sortPickerView.rx.itemSelected.asObservable().subscribe(onNext: {item in
-            self.viewModel.input.sortSelectedIndex.onNext(item.row)
+            self.viewModel.input.sortSelectedIndex.accept(item.row)
         }).disposed(by: disposeBag)
     }
-    private func fetchData(){
+    func fetchData(){
         viewModel.input.fetchTasks.onNext(true)
     }
 }

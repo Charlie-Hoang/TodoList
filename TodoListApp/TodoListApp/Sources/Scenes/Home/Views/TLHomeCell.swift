@@ -21,7 +21,7 @@ class TLHomeCell: UITableViewCell, CellConfigurable {
         viewModel = presenter as? TLTaskCellViewModel
         titleLabel.text = presenter.title
         fireDateLabel.text = presenter.fireDate
-        label.text = "#\(presenter.label ?? "")"
+        label.text = (presenter.label != nil) ? "#\(presenter.label ?? "")" : ""
         checkButton.setBackgroundImage(getCheckImage(), for: .normal)
         repeatImageView.isHidden = !presenter.isRepeat
         fireDateLabel.textColor = presenter.isPendingNotification ? .blue : .lightGray

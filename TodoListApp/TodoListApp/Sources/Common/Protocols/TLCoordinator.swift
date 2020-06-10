@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol TLCoordinator {
+protocol TLCoordinator: AnyObject {
     var childCoordinators: [TLCoordinator] { get set }
     var navigationController: UINavigationController { get set }
 

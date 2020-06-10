@@ -35,5 +35,6 @@ class TLNewTaskCoordinator: TLCoordinator {
 extension TLNewTaskCoordinator{
     func save(){
         navigationController.popViewController(animated: true)
+        self.parentCoordinator?.childCoordinators.remove(at: 0)
     }
 }

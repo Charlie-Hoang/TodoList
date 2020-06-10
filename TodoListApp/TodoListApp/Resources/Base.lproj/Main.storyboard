@@ -146,8 +146,35 @@
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="doneAccessory" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                             </textField>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YvB-jJ-HgD">
+                                <rect key="frame" x="20" y="71" width="326" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="yDz-JC-1ZO"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="Ntc-LE-Zkv"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="POt-gH-jH3"/>
+                            </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DVV-QT-kTW">
+                                <rect key="frame" x="344" y="65" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="IjF-s6-Y8h"/>
+                                    <constraint firstAttribute="height" constant="50" id="iCC-uh-sJ8"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="ic_edit"/>
+                                <connections>
+                                    <action selector="addLabelBtnClicked:" destination="S21-mx-6VE" eventType="touchUpInside" id="AjF-Q7-Vxh"/>
+                                </connections>
+                            </button>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gjj-WI-GY7">
+                                <rect key="frame" x="20" y="130" width="374" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="ldJ-1d-gGN"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="6W7-EQ-7IV"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="wfx-rd-egN"/>
+                            </scrollView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Time" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UaA-Vm-yOg">
-                                <rect key="frame" x="20" y="125" width="374" height="35"/>
+                                <rect key="frame" x="20" y="185" width="374" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="fnL-iA-Bd8"/>
                                 </constraints>
@@ -160,16 +187,8 @@
                                     <action selector="selectFireDateWithSender:" destination="S21-mx-6VE" eventType="editingDidBegin" id="3Gg-ov-rvS"/>
                                 </connections>
                             </textField>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YvB-jJ-HgD">
-                                <rect key="frame" x="20" y="71" width="374" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="yDz-JC-1ZO"/>
-                                </constraints>
-                                <viewLayoutGuide key="contentLayoutGuide" id="Ntc-LE-Zkv"/>
-                                <viewLayoutGuide key="frameLayoutGuide" id="POt-gH-jH3"/>
-                            </scrollView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Once" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JbY-zD-E2I">
-                                <rect key="frame" x="20" y="180" width="374" height="35"/>
+                                <rect key="frame" x="20" y="240" width="374" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="3Wu-Vq-Pc3"/>
                                 </constraints>
@@ -186,15 +205,20 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="12y-hj-OcL" firstAttribute="trailing" secondItem="UaA-Vm-yOg" secondAttribute="trailing" constant="20" id="2Bg-C5-aWQ"/>
+                            <constraint firstItem="DVV-QT-kTW" firstAttribute="centerY" secondItem="YvB-jJ-HgD" secondAttribute="centerY" id="5Ki-T4-a9A"/>
+                            <constraint firstItem="gjj-WI-GY7" firstAttribute="leading" secondItem="12y-hj-OcL" secondAttribute="leading" constant="20" id="CcS-Od-vA6"/>
                             <constraint firstItem="2aF-fe-kYU" firstAttribute="top" secondItem="12y-hj-OcL" secondAttribute="top" constant="20" id="HaN-Mv-6zu"/>
+                            <constraint firstItem="12y-hj-OcL" firstAttribute="trailing" secondItem="DVV-QT-kTW" secondAttribute="trailing" constant="20" id="OJJ-jz-aip"/>
                             <constraint firstItem="12y-hj-OcL" firstAttribute="trailing" secondItem="JbY-zD-E2I" secondAttribute="trailing" constant="20" id="QFc-ai-GdH"/>
                             <constraint firstItem="JbY-zD-E2I" firstAttribute="top" secondItem="UaA-Vm-yOg" secondAttribute="bottom" constant="20" id="SF5-9d-bQh"/>
+                            <constraint firstItem="DVV-QT-kTW" firstAttribute="leading" secondItem="YvB-jJ-HgD" secondAttribute="trailing" constant="10" id="TJ1-dH-uBi"/>
                             <constraint firstItem="YvB-jJ-HgD" firstAttribute="leading" secondItem="12y-hj-OcL" secondAttribute="leading" constant="20" id="VeG-js-ZYi"/>
+                            <constraint firstItem="UaA-Vm-yOg" firstAttribute="top" secondItem="gjj-WI-GY7" secondAttribute="bottom" constant="10" id="Zj1-iO-Xcz"/>
                             <constraint firstItem="UaA-Vm-yOg" firstAttribute="leading" secondItem="12y-hj-OcL" secondAttribute="leading" constant="20" id="deA-aE-66o"/>
                             <constraint firstItem="YvB-jJ-HgD" firstAttribute="top" secondItem="2aF-fe-kYU" secondAttribute="bottom" constant="10" id="eMn-jD-pSh"/>
                             <constraint firstItem="12y-hj-OcL" firstAttribute="trailing" secondItem="2aF-fe-kYU" secondAttribute="trailing" constant="20" id="fLn-6Y-fXR"/>
-                            <constraint firstItem="UaA-Vm-yOg" firstAttribute="top" secondItem="YvB-jJ-HgD" secondAttribute="bottom" constant="10" id="myg-pq-X3b"/>
-                            <constraint firstItem="12y-hj-OcL" firstAttribute="trailing" secondItem="YvB-jJ-HgD" secondAttribute="trailing" constant="20" id="ya7-EU-CC9"/>
+                            <constraint firstItem="12y-hj-OcL" firstAttribute="trailing" secondItem="gjj-WI-GY7" secondAttribute="trailing" constant="20" id="fY1-9p-DOV"/>
+                            <constraint firstItem="gjj-WI-GY7" firstAttribute="top" secondItem="YvB-jJ-HgD" secondAttribute="bottom" constant="10" id="hrv-hf-ndc"/>
                             <constraint firstItem="JbY-zD-E2I" firstAttribute="leading" secondItem="12y-hj-OcL" secondAttribute="leading" constant="20" id="z6L-w0-jj2"/>
                             <constraint firstItem="2aF-fe-kYU" firstAttribute="leading" secondItem="12y-hj-OcL" secondAttribute="leading" constant="20" id="zqK-Bo-wMu"/>
                         </constraints>
@@ -203,6 +227,7 @@
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <connections>
                         <outlet property="fireDateTextField" destination="UaA-Vm-yOg" id="xy2-uk-Nj1"/>
+                        <outlet property="imgsScollView" destination="gjj-WI-GY7" id="qyT-p4-eml"/>
                         <outlet property="labelsScollView" destination="YvB-jJ-HgD" id="Gm3-jx-Ljk"/>
                         <outlet property="repeatTypeTextField" destination="JbY-zD-E2I" id="Vn1-Sl-kGv"/>
                         <outlet property="titleTextField" destination="2aF-fe-kYU" id="kvv-Od-uA0"/>
@@ -215,5 +240,6 @@
     </scenes>
     <resources>
         <image name="btn_add" width="256" height="256"/>
+        <image name="ic_edit" width="200" height="200"/>
     </resources>
 </document>

@@ -14,10 +14,11 @@ import RealmSwift
 protocol TLHomeViewModelInputProtocol {
     var fetchTasks: PublishSubject<Bool>{get}
     var newTaskButtonSelected: PublishSubject<Bool>{get}
+    
     var taskIndexSelected: PublishSubject<Int>{get}
     var deleteTaskIndex: PublishSubject<Int>{get}
-    var labelSelectedIndex: PublishSubject<Int>{get}
-    var sortSelectedIndex: PublishSubject<Int>{get}
+    var labelSelectedIndex: BehaviorRelay<Int>{get}
+    var sortSelectedIndex: BehaviorRelay<Int>{get}
 }
 protocol TLHomeViewModelOutputProtocol {
     var listTasks: BehaviorRelay<[TLTaskCellViewModel]>{get}
@@ -41,22 +42,19 @@ class TLHomeViewModel: TLHomeViewModelProtocol, TLHomeViewModelInputProtocol, TL
     let taskIndexSelected = PublishSubject<Int>()
     var fetchTasks = PublishSubject<Bool>()
     var deleteTaskIndex = PublishSubject<Int>()
-    var labelSelectedIndex = PublishSubject<Int>()
-    var sortSelectedIndex = PublishSubject<Int>()
+    var labelSelectedIndex = BehaviorRelay<Int>(value: 0)
+    var sortSelectedIndex = BehaviorRelay<Int>(value: 0)
     
     var tasks = [Task]()
+    var displayTasks = [Task]()
     var labels = [Label]()
+    var labelToDisplay: [String] = []
     weak var coordinator: TLHomeCoordinator?
     private let disposeBag = DisposeBag()
     private let dbService = TLDBService()
     
     init() {
         binding()
-        let labels: Results<Label> = dbService.fetchLabels()
-        self.labels = Array(labels)
-        var labelToDisplay = ["All Label"]
-        labelToDisplay.append(contentsOf: labels.map{($0.title ?? "")})
-        listLabels.accept(labelToDisplay)
     }
     func binding(){
         input.newTaskButtonSelected.subscribe(onNext: {[unowned self] value in
@@ -70,10 +68,19 @@ class TLHomeViewModel: TLHomeViewModelProtocol, TLHomeViewModelInputProtocol, TL
         }).disposed(by: disposeBag)
         input.fetchTasks.subscribe(onNext:{[unowned self] value in
             if value{
+                //fetch Labels
+                let labels: Results<Label> = self.dbService.fetchLabels()
+                self.labels = Array(labels)
+                self.labelToDisplay = ["All Label"]
+                self.labelToDisplay.append(contentsOf: labels.map{($0.title ?? "")})
+                self.listLabels.accept(self.labelToDisplay)
+                //fetch Tasks
                 let res: Results<Task> = self.dbService.fetchTasks()
                 self.tasks = Array(res)
+                self.displayTasks = self.tasks
+                self.applyLabel()
                 _ = self.tasks.map{$0.processScheduleNotification()}
-                self.output.listTasks.accept(self.tasks.map{TLTaskCellViewModel(task: $0)})
+                self.output.listTasks.accept(self.displayTasks.map{TLTaskCellViewModel(task: $0)})
                 
             }
         }).disposed(by: disposeBag)
@@ -84,18 +91,31 @@ class TLHomeViewModel: TLHomeViewModelProtocol, TLHomeViewModelInputProtocol, TL
         }).disposed(by: disposeBag)
         input.labelSelectedIndex.subscribe(onNext: {[unowned self] index in
             if index == 0{
-                self.output.listTasks.accept(self.tasks.map{TLTaskCellViewModel(task: $0)})
+                self.displayTasks = self.tasks
+                self.applyLabel()
+                self.output.listTasks.accept(self.displayTasks.map{TLTaskCellViewModel(task: $0)})
             }else{
-                self.output.listTasks.accept(self.tasks.filter{$0.label == self.labels[index-1]}.map{TLTaskCellViewModel(task: $0)})
+                self.displayTasks = self.tasks.filter{$0.label == self.labels[index-1]}
+                self.applyLabel()
+                self.output.listTasks.accept(self.displayTasks.map{TLTaskCellViewModel(task: $0)})
             }
         }).disposed(by: disposeBag)
         input.sortSelectedIndex.subscribe(onNext: {[unowned self] index in
-            self.output.listTasks.accept(index.toSortType()?.sort(tasks: self.tasks).map{TLTaskCellViewModel(task: $0)} ?? [])
-//            if index == 0{
-//                self.output.listTasks.accept(self.tasks.map{TLTaskCellViewModel(task: $0)})
-//            }else{
-//                self.output.listTasks.accept(self.tasks.filter{$0.label == self.labels[index-1]}.map{TLTaskCellViewModel(task: $0)})
-//            }
+//            self.displayTasks = index.toSortType()?.sort(tasks: self.displayTasks) ?? []
+            self.applyLabel()
+            self.output.listTasks.accept(self.displayTasks.map{TLTaskCellViewModel(task: $0)})
         }).disposed(by: disposeBag)
+    }
+    func applySort(){
+        let sortType = sortSelectedIndex.value.toSortType() ?? .createDate
+        self.displayTasks = sortType.sort(tasks: self.displayTasks)
+    }
+    func applyLabel(){
+        if labelSelectedIndex.value == 0 {
+            self.displayTasks = tasks
+        }else{
+            self.displayTasks = self.tasks.filter{$0.label == self.labels[labelSelectedIndex.value - 1]}
+        }
+        applySort()
     }
 }

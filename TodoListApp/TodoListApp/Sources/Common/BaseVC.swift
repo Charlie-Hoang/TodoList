@@ -1,5 +1,5 @@
 //
-//  TLBaseVC.swift
+//  BaseVC.swift
 //  TodoListApp
 //
 //  Created by Charlie on 6/6/20.
@@ -10,7 +10,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class TLBaseVC: UIViewController, TLStoryboarded{
+class BaseVC: UIViewController, TLStoryboarded{
     var disposeBag = DisposeBag()
     
     override func viewDidLoad() {
@@ -20,7 +20,7 @@ class TLBaseVC: UIViewController, TLStoryboarded{
 }
 
 // MARK: SETUP NavigationBar
-extension TLBaseVC{
+extension BaseVC{
     @objc func back() {
         self.navigationController?.popViewController(animated: true);
     }

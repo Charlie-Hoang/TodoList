@@ -9,7 +9,10 @@
 import UIKit
 import RxSwift
 
-class TLNewTaskVC: TLBaseVC {
+let TAG_BTN_LABEL_START = 100
+let TAG_BTN_IMG_START = 200
+
+class TLNewTaskVC: BaseVC {
     
     var viewModel: TLNewTaskViewModel!
     
@@ -17,6 +20,7 @@ class TLNewTaskVC: TLBaseVC {
     @IBOutlet weak var fireDateTextField: UITextField!
     @IBOutlet weak var repeatTypeTextField: UITextField!
     @IBOutlet weak var labelsScollView: UIScrollView!
+    @IBOutlet weak var imgsScollView: UIScrollView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,10 +65,16 @@ class TLNewTaskVC: TLBaseVC {
 //        }).disposed(by: disposeBag)
 //        datePickerView.addTarget(self, action: #selector(handleDatePicker(sender:)), for: .valueChanged)
     }
+    
+    @IBAction func addLabelBtnClicked(_ sender: Any) {
+        editLabels()
+    }
+    
     @objc func handleDatePicker(sender: UIDatePicker){
         self.fireDateTextField.text = sender.date.tlString()
         
     }
+    
 }
 
 extension TLNewTaskVC{
@@ -78,9 +88,19 @@ extension TLNewTaskVC{
                 self.setupLabels(element)
             }
         }.disposed(by: disposeBag)
-        viewModel.output.labelIndexSelected.asObservable().subscribe{event in
+        viewModel.output.listImgs.asObservable().subscribe{event in
             if let element = event.element{
-                self.setupSelectedLabels(index: element)
+                self.setupImgs(element)
+            }
+        }.disposed(by: disposeBag)
+        viewModel.output.labelIndexSelected.asObservable().subscribe{event in
+            if let element = event.element, element >= 0{
+                self.setupSelectedLabel(index: element)
+            }
+        }.disposed(by: disposeBag)
+        viewModel.output.imgIndexSelected.asObservable().subscribe{event in
+            if let element = event.element, element >= 0{
+                self.setupSelectedImg(index: element)
             }
         }.disposed(by: disposeBag)
         viewModel.output.repeatTypeSelected.asObservable().subscribe{event in
@@ -90,10 +110,10 @@ extension TLNewTaskVC{
         }.disposed(by: disposeBag)
 //            .bind(to: repeatTypeTextField.rx.text).disposed(by: disposeBag)
     }
-    private func setupSelectedLabels(index: Int){
+    private func setupSelectedLabel(index: Int){
         var count = 0
         while true {
-            let _btn = self.view.viewWithTag(count+100) as? UIButton
+            let _btn = self.view.viewWithTag(count+TAG_BTN_LABEL_START) as? UIButton
             count += 1
             if let _btn = _btn {
                 _btn.setTitleColor(.black, for: .normal)
@@ -101,10 +121,25 @@ extension TLNewTaskVC{
                 break
             }
         }
-        let _selectedBtn = self.view.viewWithTag(index+100) as? UIButton
+        let _selectedBtn = self.view.viewWithTag(index+TAG_BTN_LABEL_START) as? UIButton
         _selectedBtn?.setTitleColor(.red, for: .normal)
     }
+    private func setupSelectedImg(index: Int){
+        var count = 0
+        while true {
+            let _btn = self.view.viewWithTag(count+TAG_BTN_IMG_START) as? UIButton
+            count += 1
+            if let _btn = _btn {
+                _btn.backgroundColor = .clear
+            }else{
+                break
+            }
+        }
+        let _selectedBtn = self.view.viewWithTag(index+TAG_BTN_IMG_START) as? UIButton
+        _selectedBtn?.backgroundColor = .orange
+    }
     private func setupLabels(_ labels: [String]?) {
+        labelsScollView.removeSubviews()
         guard let labels = labels else { return }
         var xOffset: CGFloat = 16
         let buttonPadding: CGFloat = 16
@@ -116,19 +151,33 @@ extension TLNewTaskVC{
             _btn.setTitle(_title , for: .normal)
             _btn.setTitleColor(.black, for: .normal)
             _btn.titleLabel?.font = _btnFont
-            _btn.tag = 100 + (labels.firstIndex(of: item) ?? 0)
+            _btn.tag = TAG_BTN_LABEL_START + (labels.firstIndex(of: item) ?? 0)
             _btn.rx.tap.subscribe({[unowned self] value in
-                self.viewModel.input.labelButtonSelectedIndex.onNext(_btn.tag - 100)
+                self.viewModel.input.selectLabel(index: _btn.tag - TAG_BTN_LABEL_START)
             }).disposed(by: disposeBag)
             
-//            _btn.rx.tap.bind {[unowned self] in
-//                self.viewModel.action.topCategoryItemClicked(model: item)
-//            }.disposed(by: disposeBag)
-//            _btn.addTarget(self, action: #selector(self.selectTopCategory), for: .touchUpInside)
             labelsScollView.addSubview(_btn)
             xOffset = xOffset + _btn.bounds.width + buttonPadding
         }
         labelsScollView.contentSize = CGSize(width: xOffset, height: 50)
+    }
+    private func setupImgs(_ imgs: [String]?) {
+        imgsScollView.removeSubviews()
+        guard let imgs = imgs else { return }
+        var xOffset: CGFloat = 16
+        let buttonPadding: CGFloat = 16
+        for img in imgs {
+            let _btn = UIButton(frame: CGRect(x: xOffset, y: 0.0, width: 50 , height: 50))
+            _btn.setBackgroundImage(UIImage(named: img), for: .normal)
+            _btn.tag = TAG_BTN_IMG_START + (imgs.firstIndex(of: img) ?? 0)
+            _btn.rx.tap.subscribe({[unowned self] value in
+                self.viewModel.selectImg(index: _btn.tag - TAG_BTN_IMG_START)
+            }).disposed(by: disposeBag)
+            
+            imgsScollView.addSubview(_btn)
+            xOffset = xOffset + _btn.bounds.width + buttonPadding
+        }
+        imgsScollView.contentSize = CGSize(width: xOffset, height: 50)
     }
     private func fetchData(){
         viewModel.input.fetchLabels.onNext(true)
@@ -138,4 +187,51 @@ extension TLNewTaskVC{
         fireDateTextField.resignFirstResponder()
     }
     
+}
+extension TLNewTaskVC{
+    private func editLabels(){
+        let alert = UIAlertController(title: "Edit Labels", message: nil, preferredStyle: .alert)
+        
+        for (index, label) in viewModel.output.listLabels.value.enumerated() {
+            let labelAction = UIAlertAction(title: label, style: .default) { [unowned self] _ in
+                self.editLabel(index: index)
+            }
+            alert.addAction(labelAction)
+        }
+        let addAction = UIAlertAction(title: "Add new Label", style: .default) { [unowned self] _ in
+            self.addNewLabel()
+        }
+        alert.addAction(addAction)
+        let noAction = UIAlertAction(title: "Cancel", style: .default)
+        alert.addAction(noAction)
+        present(alert, animated: true, completion: nil)
+    }
+    private func editLabel(index: Int){
+        let alert = UIAlertController(title: "Delete Label", message: viewModel.output.listLabels.value[index], preferredStyle: .alert)
+        let yesAction = UIAlertAction(title: "Delete", style: .default) { [unowned self] _ in
+            self.viewModel.input.deleteLabel(index: index)
+            self.editLabels()
+        }
+        alert.addAction(yesAction)
+        let noAction = UIAlertAction(title: "Cancel", style: .default) { [unowned self] _ in
+            self.editLabels()
+        }
+        alert.addAction(noAction)
+        present(alert, animated: true, completion: nil)
+    }
+    private func addNewLabel(){
+        let alertController = UIAlertController(title: "Add new Label", message: nil, preferredStyle: .alert)
+        let confirmAction = UIAlertAction(title: "Add", style: .default) { (_) in
+            if let txtField = alertController.textFields?.first, let text = txtField.text {
+                self.viewModel.input.addNewLabel(title: text)
+            }
+        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (_) in }
+        alertController.addTextField { (textField) in
+            textField.placeholder = "Tag"
+        }
+        alertController.addAction(confirmAction)
+        alertController.addAction(cancelAction)
+        self.present(alertController, animated: true, completion: nil)
+    }
 }

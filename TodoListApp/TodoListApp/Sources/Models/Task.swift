@@ -12,6 +12,7 @@ import RealmSwift
 class Task: Object{
     @objc dynamic var id = UUID().uuidString
     @objc dynamic var title: String?
+    @objc dynamic var imgAttachment: String?
     @objc dynamic var fireDate: Date?
     let finished = RealmOptional<Bool>()
     let repeatType = RealmOptional<Int>()
@@ -28,7 +29,8 @@ class Task: Object{
         self.fireDate = fireDate
         self.finished.value = false
         self.repeatType.value = RepeatType.once.rawValue
-//        self.label = Label(title: "morning")
+        let labels = TLDBService().fetchLabels()
+        self.label = labels.first
     }
     func isRepeat() -> Bool{
         if self.repeatType.value == RepeatType.once.rawValue {
@@ -37,7 +39,11 @@ class Task: Object{
         return true
     }
     func scheduleNotification(){
-        TLNotificationService().schedule(identifier: id, body: title, time: fireDate, trigger: repeatType.value?.toRepeatType() ?? .once)
+        var imgData: NSData?
+        if let imgAttachment = imgAttachment {
+            imgData = UIImage(named: imgAttachment)?.pngData() as NSData?
+        }
+        TLNotificationService().schedule(identifier: id, body: title, time: fireDate, trigger: repeatType.value?.toRepeatType() ?? .once, imgData: imgData)
     }
     func removeNotification(){
         TLNotificationService().remove(identifier: id)

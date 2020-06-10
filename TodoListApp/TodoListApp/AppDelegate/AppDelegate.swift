@@ -22,6 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     func applicationDidBecomeActive(_ application: UIApplication) {
         UIApplication.shared.applicationIconBadgeNumber = 0
+        coordinator?.reFetchData()
     }
     // MARK: UISceneSession Lifecycle
     @available(iOS 13.0, *)
@@ -49,7 +50,6 @@ extension AppDelegate{
     //        TLNotificationService().removeAll()
             if #available(iOS 13, *) { } else {
                 let navController = UINavigationController()
-
                 // send that into our coordinator so that it can display view controllers
                 coordinator = TLHomeCoordinator(navigationController: navController)
 
