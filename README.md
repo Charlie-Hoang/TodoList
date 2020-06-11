@@ -1,12 +1,13 @@
 # TodoList
 To-do list application
-![image](./imgs/1.png)
+<div align="center">
+<img src="https://github.com/Charlie-Hoang/TodoList/blob/develop/imgs/1.png" width="207" height="368"/>
+</div>
 
-# Compatibility
-- This project is written in Swift 5 and Xcode 11.5
-
-# Minimum iOS version required
+## Requirements 
 - iOS 10.0
+- Xcode 11
+- Swift 5.0
 
 # Step-by-step guide
 
@@ -42,26 +43,40 @@ Select target device , build and Run. Enjoy!
 # Features
 - CRUD (Task), CRD (Label)
 - Sort (Sort Task base on Create Date, Remind Date, Title)
-![image](./imgs/3.png)
+<div align="left">
+<img src="https://github.com/Charlie-Hoang/TodoList/blob/develop/imgs/3.png" width="207" height="368"/>
+</div>
 
 - Filter (base on Label)
-![image](./imgs/2.png)
+<div align="left">
+<img src="https://github.com/Charlie-Hoang/TodoList/blob/develop/imgs/2.png" width="207" height="368"/>
+</div>
 
 - Search (Task)
-![image](./imgs/4.png)
+<div align="left">
+<img src="https://github.com/Charlie-Hoang/TodoList/blob/develop/imgs/4.png" width="207" height="368"/>
+</div>
 
 - Media attachment (can add attach image for task and notification)
-![image](./imgs/5.png)
+<div align="left">
+<img src="https://github.com/Charlie-Hoang/TodoList/blob/develop/imgs/5.png" width="207" height="368"/>
+</div>
 
 - Reminder (Notification for task. Include types: once, hourly, daily, weekly, monthly, yearly)
-![image](./imgs/9.png)![image](./imgs/10.png)
+<div align="left">
+<img src="https://github.com/Charlie-Hoang/TodoList/blob/develop/imgs/8.png" width="207" height="368"/><img src="https://github.com/Charlie-Hoang/TodoList/blob/develop/imgs/10.png" width="207" height="368"/>
+</div>
 
 - Label (Create, Read, Delete)
-![image](./imgs/6.png)![image](./imgs/7.png)
+<div align="left">
+<img src="https://github.com/Charlie-Hoang/TodoList/blob/develop/imgs/6.png" width="207" height="368"/><img src="https://github.com/Charlie-Hoang/TodoList/blob/develop/imgs/7.png" width="207" height="368"/>
+</div>
 
 # Others
 - UnitTest
-![image](./imgs/unittest.png)
+<div align="left">
+<img src="https://github.com/Charlie-Hoang/TodoList/blob/develop/imgs/unittest.png" width="207" height="368"/>
+</div>
 
 # Author
 - [Charlie](https://www.linkedin.com/in/cuong-hoang-b650715a)
