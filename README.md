@@ -1,7 +1,7 @@
 # TodoList
 To-do list application
 <div align="center">
-<img src="https://github.com/Charlie-Hoang/TodoList/blob/develop/imgs/1.png" width="207" height="368"/>
+<img src="https://github.com/Charlie-Hoang/TodoList/blob/develop/imgs/1.png" width="207" height="368"/>  <img src="https://github.com/Charlie-Hoang/TodoList/blob/develop/imgs/12.png" width="207" height="368"/>
 </div>
 
 ## Requirements 
@@ -42,6 +42,10 @@ Select target device , build and Run. Enjoy!
 
 # Features
 - CRUD (Task), CRD (Label)
+<div align="left">
+<img src="https://github.com/Charlie-Hoang/TodoList/blob/develop/imgs/11.png" width="207" height="368"/>
+</div>
+
 - Sort (Sort Task base on Create Date, Remind Date, Title)
 <div align="left">
 <img src="https://github.com/Charlie-Hoang/TodoList/blob/develop/imgs/3.png" width="207" height="368"/>
@@ -64,18 +68,18 @@ Select target device , build and Run. Enjoy!
 
 - Reminder (Notification for task. Include types: once, hourly, daily, weekly, monthly, yearly)
 <div align="left">
-<img src="https://github.com/Charlie-Hoang/TodoList/blob/develop/imgs/8.png" width="207" height="368"/><img src="https://github.com/Charlie-Hoang/TodoList/blob/develop/imgs/10.png" width="207" height="368"/>
+<img src="https://github.com/Charlie-Hoang/TodoList/blob/develop/imgs/8.png" width="207" height="368"/>  <img src="https://github.com/Charlie-Hoang/TodoList/blob/develop/imgs/10.png" width="207" height="368"/>
 </div>
 
 - Label (Create, Read, Delete)
 <div align="left">
-<img src="https://github.com/Charlie-Hoang/TodoList/blob/develop/imgs/6.png" width="207" height="368"/><img src="https://github.com/Charlie-Hoang/TodoList/blob/develop/imgs/7.png" width="207" height="368"/>
+<img src="https://github.com/Charlie-Hoang/TodoList/blob/develop/imgs/6.png" width="207" height="368"/>  <img src="https://github.com/Charlie-Hoang/TodoList/blob/develop/imgs/7.png" width="207" height="368"/>
 </div>
 
 # Others
 - UnitTest
 <div align="left">
-<img src="https://github.com/Charlie-Hoang/TodoList/blob/develop/imgs/unittest.png" width="207" height="368"/>
+<img src="https://github.com/Charlie-Hoang/TodoList/blob/develop/imgs/unittest.png" width="336" height="302"/>
 </div>
 
 # Author
