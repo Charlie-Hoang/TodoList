@@ -68,7 +68,7 @@ Select target device , build and Run. Enjoy!
 
 - Reminder (Notification for task. Include types: once, hourly, daily, weekly, monthly, yearly)
 <div align="left">
-<img src="https://github.com/Charlie-Hoang/TodoList/blob/develop/imgs/8.png" width="207" height="368"/>  <img src="https://github.com/Charlie-Hoang/TodoList/blob/develop/imgs/10.png" width="207" height="368"/>
+<img src="https://github.com/Charlie-Hoang/TodoList/blob/develop/imgs/9.png" width="207" height="368"/>  <img src="https://github.com/Charlie-Hoang/TodoList/blob/develop/imgs/10.png" width="207" height="368"/>
 </div>
 
 - Label (Create, Read, Delete)
