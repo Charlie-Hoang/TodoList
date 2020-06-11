@@ -1,10 +1,8 @@
 # TodoList
 
-<body style="background-color:black;">
 <div align="center">
 <img src="https://github.com/Charlie-Hoang/TodoList/blob/develop/imgs/1.png" width="207" height="368"/>  <img src="https://github.com/Charlie-Hoang/TodoList/blob/develop/imgs/12.png" width="207" height="368"/>
 </div>
-</body>
 
 ## Requirements 
 - iOS 10.0
