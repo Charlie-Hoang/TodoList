@@ -69,12 +69,12 @@ extension AppDelegate{
                 TLDBService().initialDB()
                 TLNotificationService().removeAll()
             }
-            TLNotificationService().getPendingNotificationIds { ids in
-                print("PNTF: \(ids ?? [])")
-            }
-            TLNotificationService().getDeliveredNotificationIds { ids in
-                print("DNTF: \(ids ?? [])")
-            }
+//            TLNotificationService().getPendingNotificationIds { ids in
+//                print("PNTF: \(ids ?? [])")
+//            }
+//            TLNotificationService().getDeliveredNotificationIds { ids in
+//                print("DNTF: \(ids ?? [])")
+//            }
         }
         private func initApperance(){
             UINavigationBar.appearance().barTintColor = UIColor(red: 245/255, green: 195/255, blue: 84/255, alpha: 1.0)
@@ -83,9 +83,9 @@ extension AppDelegate{
 
 extension AppDelegate: UNUserNotificationCenterDelegate {
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
-        
+        //TODO:
     }
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
-        
+        //TODO:
     }
 }

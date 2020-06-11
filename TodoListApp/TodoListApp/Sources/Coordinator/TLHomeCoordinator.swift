@@ -8,14 +8,16 @@
 
 import UIKit
 
-class TLHomeCoordinator: TLCoordinator {
+class TLHomeCoordinator: NSObject, TLCoordinator, UINavigationControllerDelegate {
     var childCoordinators = [TLCoordinator]()
     var navigationController: UINavigationController
 
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
+        
     }
     func start() {
+        self.navigationController.delegate = self
         let vm = TLHomeViewModel()
         let vc = TLHomeVC.instantiate()
         vc.viewModel = vm
@@ -30,12 +32,14 @@ extension TLHomeCoordinator{
         let child = TLNewTaskCoordinator(navigationController: navigationController)
         child.parentCoordinator = self
         childCoordinators.append(child)
+        print("childCoorNew: \(childCoordinators.count)")
         child.start()
     }
     func editTask(task: Task){
         let child = TLNewTaskCoordinator(navigationController: navigationController)
         child.parentCoordinator = self
         childCoordinators.append(child)
+        print("childCoorEdit: \(childCoordinators.count)")
         child.startForEdit(task: task)
     }
     func reFetchData(){
@@ -64,9 +68,9 @@ extension TLHomeCoordinator{
         }
 
         // We’re still here – it means we’re popping the view controller, so we can check whether it’s a buy view controller
-        if let buyViewController = fromViewController as? TLNewTaskVC {
+        if let newTaskVC = fromViewController as? TLNewTaskVC {
             // We're popping a buy view controller; end its coordinator
-            childDidFinish(buyViewController.viewModel.coordinator)
+            childDidFinish(newTaskVC.viewModel.coordinator)
         }
     }
 }

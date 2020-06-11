@@ -14,6 +14,7 @@ protocol TLTaskCellPresentable {
     var label: String?{get}
     var isRepeat: Bool{get}
     var isPendingNotification: Bool{get}
+    var imgAttachment: String?{get}
 }
 struct TLTaskCellViewModel: TLTaskCellPresentable{
     var model: Task
@@ -22,6 +23,7 @@ struct TLTaskCellViewModel: TLTaskCellPresentable{
     var label: String?{return model.label?.title}
     var isRepeat: Bool{return model.isRepeat()}
     var isPendingNotification: Bool{return model.pendingNotification}
+    var imgAttachment: String?{return model.imgAttachment}
     init(task: Task){
         self.model = task
     }

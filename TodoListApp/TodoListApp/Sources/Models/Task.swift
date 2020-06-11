@@ -29,8 +29,6 @@ class Task: Object{
         self.fireDate = fireDate
         self.finished.value = false
         self.repeatType.value = RepeatType.once.rawValue
-        let labels = TLDBService().fetchLabels()
-        self.label = labels.first
     }
     func isRepeat() -> Bool{
         if self.repeatType.value == RepeatType.once.rawValue {
@@ -39,11 +37,7 @@ class Task: Object{
         return true
     }
     func scheduleNotification(){
-        var imgData: NSData?
-        if let imgAttachment = imgAttachment {
-            imgData = UIImage(named: imgAttachment)?.pngData() as NSData?
-        }
-        TLNotificationService().schedule(identifier: id, body: title, time: fireDate, trigger: repeatType.value?.toRepeatType() ?? .once, imgData: imgData)
+        TLNotificationService().schedule(identifier: id, body: title, time: fireDate, trigger: repeatType.value?.toRepeatType() ?? .once, imgName: imgAttachment)
     }
     func removeNotification(){
         TLNotificationService().remove(identifier: id)

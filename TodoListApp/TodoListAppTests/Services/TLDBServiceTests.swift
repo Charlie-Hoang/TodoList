@@ -8,11 +8,11 @@
 
 import XCTest
 @testable import TodoListApp
-
+//Task
 class TLDBServiceTests: XCTestCase {
     let dbService = TLDBService(config: TLDBInMemoryConfiguration.default)
     
-    func initDB(){
+    func initTasksDB(){
         let task1 = Task(title: "go to work", fireDate: Date())
         task1.finished.value = true
         let task2 = Task(title: "go to eat", fireDate: Date())
@@ -24,7 +24,7 @@ class TLDBServiceTests: XCTestCase {
     }
     func testFetchTasks() {
         dbService.deleteAllTasks()
-        initDB()
+        initTasksDB()
         let tasks = dbService.fetchTasks().sorted(byKeyPath: "fireDate")
         XCTAssert(tasks.count==3, "should be 3 tasks")
         XCTAssert(tasks.first?.title == "go to work", "should be equals")
@@ -35,9 +35,9 @@ class TLDBServiceTests: XCTestCase {
         XCTAssert(!tasks[2].finished.value!, "should be false")
         dbService.deleteAllTasks()
     }
-    func testUpdateGroups(){
+    func testUpdateTasks(){
         dbService.deleteAllTasks()
-        initDB()
+        initTasksDB()
         let tasks = dbService.fetchTasks()
         let task = tasks.first!
         dbService.update(task: task) {
@@ -49,7 +49,7 @@ class TLDBServiceTests: XCTestCase {
     }
     func testDeleteTasks(){
         dbService.deleteAllTasks()
-        initDB()
+        initTasksDB()
         let tasks = dbService.fetchTasks()
         let task = tasks.first!
         dbService.deleteTask(task: task)
@@ -57,6 +57,51 @@ class TLDBServiceTests: XCTestCase {
         XCTAssert(newTasks.count==2, "should be 2 tasks")
         dbService.deleteAllTasks()
         let newTasks2 = dbService.fetchTasks()
-        XCTAssert(newTasks2.count==0, "group should be empty")
+        XCTAssert(newTasks2.count==0, "should be no task")
+    }
+}
+//Label
+extension TLDBServiceTests{
+    func initLabelsDB(){
+        let label1 = Label(title: "Morning")
+        let label2 = Label(title: "Work")
+        let label3 = Label(title: "Health")
+        dbService.createLabel(label: label1)
+        dbService.createLabel(label: label2)
+        dbService.createLabel(label: label3)
+    }
+    func testFetchLabels() {
+        dbService.deleteAllLabels()
+        initLabelsDB()
+        let labels = dbService.fetchLabels()
+        XCTAssert(labels.count==3, "should be 3 tasks")
+        XCTAssert(labels.first?.title == "Morning", "should be equals")
+        XCTAssert(labels[1].title == "Work", "should be equals")
+        XCTAssert(labels[2].title == "Health", "should be equals")
+        dbService.deleteAllLabels()
+    }
+    func testUpdateLabels(){
+        dbService.deleteAllLabels()
+        initLabelsDB()
+        let labels = dbService.fetchLabels()
+        let label = labels.first!
+        dbService.update(label: label) {
+            label.title = "Eating"
+        }
+        let newLabels = dbService.fetchLabels()
+        XCTAssert(newLabels.first?.title=="Eating", "new label should be titled 'Eating'")
+        dbService.deleteAllTasks()
+    }
+    func testDeleteLabels(){
+        dbService.deleteAllLabels()
+        initLabelsDB()
+        let labels = dbService.fetchLabels()
+        let label = labels.first!
+        dbService.deleteLabel(label: label)
+        let newLabels = dbService.fetchLabels()
+        XCTAssert(newLabels.count==2, "should be 2 labels")
+        dbService.deleteAllLabels()
+        let newLabels2 = dbService.fetchLabels()
+        XCTAssert(newLabels2.count==0, "should be no label")
     }
 }

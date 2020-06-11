@@ -18,6 +18,7 @@ class TLHomeVC: BaseVC, TLVC {
     @IBOutlet weak var labelsPickerView: UIPickerView!
     @IBOutlet weak var sortPickerViewContainer: UIView!
     @IBOutlet weak var sortPickerView: UIPickerView!
+    @IBOutlet weak var searchBar: UISearchBar!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,19 +26,23 @@ class TLHomeVC: BaseVC, TLVC {
         self.title = "Todo List"
         showLabelButton()
         showSortButton()
+        DispatchQueue.main.async {
+            self.binding()
+        }
         initTableView()
-        binding()
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         fetchData()
     }
     @objc override func category() {
+        searchBar.resignFirstResponder()
         sortPickerViewContainer.isHidden = true
         labelsPickerViewContainer.isHidden = false
         labelsPickerViewContainer.makeLTAnimation(animationType: .pushFromTop)
     }
     @objc override func sort() {
+        searchBar.resignFirstResponder()
         labelsPickerViewContainer.isHidden = true
         sortPickerViewContainer.isHidden = false
         sortPickerViewContainer.makeLTAnimation(animationType: .pushFromTop)
@@ -50,6 +55,10 @@ class TLHomeVC: BaseVC, TLVC {
     @IBAction func doneSortPickerView(_ sender: Any) {
         sortPickerViewContainer.isHidden = true
         sortPickerViewContainer.makeLTAnimation(animationType: .pushFromBottom)
+    }
+    
+    func fetchData(){
+        viewModel.input.fetchTasks.onNext(true)
     }
 }
 extension TLHomeVC{
@@ -80,6 +89,7 @@ extension TLHomeVC{
         newTaskButton.rx.tap.subscribe({[unowned self] value in
             self.viewModel.input.newTaskButtonSelected.onNext(true)
         }).disposed(by: disposeBag)
+        
         //labels
         viewModel.output.listLabels.asObservable().bind(to: labelsPickerView.rx.itemTitles) { _, item in
             
@@ -90,16 +100,20 @@ extension TLHomeVC{
             self.navigationItem.leftBarButtonItem = self.createBarButton(title: self.viewModel.labelToDisplay[item.row], image: nil, selector: #selector(self.category))
             self.viewModel.input.labelSelectedIndex.accept(item.row)
         }).disposed(by: disposeBag)
+        
         //sort
         viewModel.output.listSorts.asObservable().bind(to: sortPickerView.rx.itemTitles) { _, item in
-//            self.navigationItem.rightBarButtonItem = self.createBarButton(title: item.toString(), image: nil, selector: #selector(self.sort))
             return "\(item.toString())"
         }.disposed(by: disposeBag)
         sortPickerView.rx.itemSelected.asObservable().subscribe(onNext: {item in
             self.viewModel.input.sortSelectedIndex.accept(item.row)
         }).disposed(by: disposeBag)
-    }
-    func fetchData(){
-        viewModel.input.fetchTasks.onNext(true)
+        
+        //search
+        searchBar.rx.text.orEmpty.bind(to: viewModel.input.searchText).disposed(by: disposeBag)
+        searchBar.rx.textDidBeginEditing.asObservable().subscribe(onNext: {item in
+            self.labelsPickerViewContainer.isHidden = true
+            self.sortPickerViewContainer.isHidden = true
+        }).disposed(by: disposeBag)
     }
 }

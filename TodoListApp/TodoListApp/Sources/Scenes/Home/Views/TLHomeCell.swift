@@ -15,6 +15,7 @@ class TLHomeCell: UITableViewCell, CellConfigurable {
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var checkButton: UIButton!
     @IBOutlet weak var repeatImageView: UIImageView!
+    @IBOutlet weak var imgAttchmentImageView: UIImageView!
     var viewModel: TLTaskCellViewModel?
     
     func configCell(presenter: Presenter){
@@ -25,6 +26,9 @@ class TLHomeCell: UITableViewCell, CellConfigurable {
         checkButton.setBackgroundImage(getCheckImage(), for: .normal)
         repeatImageView.isHidden = !presenter.isRepeat
         fireDateLabel.textColor = presenter.isPendingNotification ? .blue : .lightGray
+        if let imgAttachment = presenter.imgAttachment{
+            imgAttchmentImageView.image = UIImage(named: imgAttachment)
+        }
     }
     
     @IBAction func checkBtnClicked(_ sender: Any) {

@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CB00B3EB24928BE80000A6C8 /* TaskTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB00B3EA24928BE80000A6C8 /* TaskTests.swift */; };
+		CB00B3ED249291E20000A6C8 /* RepeatTypeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB00B3EC249291E20000A6C8 /* RepeatTypeTests.swift */; };
+		CB00B3EF249294BF0000A6C8 /* SortTypeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB00B3EE249294BF0000A6C8 /* SortTypeTests.swift */; };
 		CB6A8E38248E437C00F5A5A5 /* Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6A8E37248E437C00F5A5A5 /* Label.swift */; };
 		CB6A8E3A248E7BD400F5A5A5 /* TLHomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6A8E39248E7BD400F5A5A5 /* TLHomeViewModel.swift */; };
 		CB6A8E3C248E7D1B00F5A5A5 /* TLVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6A8E3B248E7D1B00F5A5A5 /* TLVC.swift */; };
@@ -51,7 +54,6 @@
 		CB9F112D2491582E0070A10C /* img_att15.png in Resources */ = {isa = PBXBuildFile; fileRef = CB9F111D2491582E0070A10C /* img_att15.png */; };
 		CB9F112E2491582E0070A10C /* img_att12.png in Resources */ = {isa = PBXBuildFile; fileRef = CB9F111E2491582E0070A10C /* img_att12.png */; };
 		CB9F112F2491582E0070A10C /* img_att1.png in Resources */ = {isa = PBXBuildFile; fileRef = CB9F111F2491582E0070A10C /* img_att1.png */; };
-		CB9F113324915BB60070A10C /* img_tmp.png in Resources */ = {isa = PBXBuildFile; fileRef = CB9F113224915BB60070A10C /* img_tmp.png */; };
 		CBDE7490248B417D0032F0F8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBDE748F248B417D0032F0F8 /* AppDelegate.swift */; };
 		CBDE7492248B417D0032F0F8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBDE7491248B417D0032F0F8 /* SceneDelegate.swift */; };
 		CBDE74A7248B417F0032F0F8 /* TodoListAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBDE74A6248B417F0032F0F8 /* TodoListAppTests.swift */; };
@@ -80,6 +82,9 @@
 		684586E8CB909A7A40C456A9 /* Pods-TodoListAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodoListAppTests.debug.xcconfig"; path = "Target Support Files/Pods-TodoListAppTests/Pods-TodoListAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		81C43ACCF7E6A48FC0271F73 /* Pods-TodoListAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodoListAppTests.release.xcconfig"; path = "Target Support Files/Pods-TodoListAppTests/Pods-TodoListAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		B1FC45A1494B23BD56FD0122 /* Pods-TodoListApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodoListApp.debug.xcconfig"; path = "Target Support Files/Pods-TodoListApp/Pods-TodoListApp.debug.xcconfig"; sourceTree = "<group>"; };
+		CB00B3EA24928BE80000A6C8 /* TaskTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTests.swift; sourceTree = "<group>"; };
+		CB00B3EC249291E20000A6C8 /* RepeatTypeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepeatTypeTests.swift; sourceTree = "<group>"; };
+		CB00B3EE249294BF0000A6C8 /* SortTypeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortTypeTests.swift; sourceTree = "<group>"; };
 		CB6A8E37248E437C00F5A5A5 /* Label.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Label.swift; sourceTree = "<group>"; };
 		CB6A8E39248E7BD400F5A5A5 /* TLHomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TLHomeViewModel.swift; sourceTree = "<group>"; };
 		CB6A8E3B248E7D1B00F5A5A5 /* TLVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TLVC.swift; sourceTree = "<group>"; };
@@ -126,7 +131,6 @@
 		CB9F111D2491582E0070A10C /* img_att15.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img_att15.png; sourceTree = "<group>"; };
 		CB9F111E2491582E0070A10C /* img_att12.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img_att12.png; sourceTree = "<group>"; };
 		CB9F111F2491582E0070A10C /* img_att1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img_att1.png; sourceTree = "<group>"; };
-		CB9F113224915BB60070A10C /* img_tmp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img_tmp.png; sourceTree = "<group>"; };
 		CBDE748C248B417D0032F0F8 /* TodoListApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TodoListApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBDE748F248B417D0032F0F8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CBDE7491248B417D0032F0F8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -179,6 +183,25 @@
 				EA66A6688B9399D99BC41B9A /* Pods_TodoListAppTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CB00B3F0249296CF0000A6C8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CB00B3EA24928BE80000A6C8 /* TaskTests.swift */,
+				CB00B3EC249291E20000A6C8 /* RepeatTypeTests.swift */,
+				CB00B3EE249294BF0000A6C8 /* SortTypeTests.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		CB00B3F1249296D90000A6C8 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				CB777ECC248DD0CE008B6BEB /* TLDBInMemoryConfiguartion.swift */,
+				CB777ECB248DD0CE008B6BEB /* TLDBServiceTests.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		CB777E62248BD91B008B6BEB /* AppDelegate */ = {
@@ -343,7 +366,6 @@
 		CB9F110F249158170070A10C /* img */ = {
 			isa = PBXGroup;
 			children = (
-				CB9F113224915BB60070A10C /* img_tmp.png */,
 				CB9F111F2491582E0070A10C /* img_att1.png */,
 				CB9F11192491582D0070A10C /* img_att2.png */,
 				CB9F11142491582D0070A10C /* img_att3.png */,
@@ -398,8 +420,8 @@
 		CBDE74A5248B417F0032F0F8 /* TodoListAppTests */ = {
 			isa = PBXGroup;
 			children = (
-				CB777ECC248DD0CE008B6BEB /* TLDBInMemoryConfiguartion.swift */,
-				CB777ECB248DD0CE008B6BEB /* TLDBServiceTests.swift */,
+				CB00B3F1249296D90000A6C8 /* Services */,
+				CB00B3F0249296CF0000A6C8 /* Models */,
 				CBDE74A6248B417F0032F0F8 /* TodoListAppTests.swift */,
 				CB777F16248DDE84008B6BEB /* Info.plist */,
 			);
@@ -499,7 +521,6 @@
 				CB9F11282491582E0070A10C /* img_att8.png in Resources */,
 				CB9F11292491582E0070A10C /* img_att2.png in Resources */,
 				CB9F11222491582E0070A10C /* img_att16.png in Resources */,
-				CB9F113324915BB60070A10C /* img_tmp.png in Resources */,
 				CB9F112E2491582E0070A10C /* img_att12.png in Resources */,
 				CB9F11262491582E0070A10C /* img_att13.png in Resources */,
 				CB9F11272491582E0070A10C /* img_att14.png in Resources */,
@@ -646,7 +667,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB00B3ED249291E20000A6C8 /* RepeatTypeTests.swift in Sources */,
+				CB00B3EB24928BE80000A6C8 /* TaskTests.swift in Sources */,
 				CB777ECE248DD0CE008B6BEB /* TLDBInMemoryConfiguartion.swift in Sources */,
+				CB00B3EF249294BF0000A6C8 /* SortTypeTests.swift in Sources */,
 				CBDE74A7248B417F0032F0F8 /* TodoListAppTests.swift in Sources */,
 				CB777ECD248DD0CE008B6BEB /* TLDBServiceTests.swift in Sources */,
 			);
@@ -802,7 +826,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = VVYWH469LG;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = TodoListApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -822,7 +846,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = VVYWH469LG;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = TodoListApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (

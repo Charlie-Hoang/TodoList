@@ -11,21 +11,15 @@ import RealmSwift
 
 enum RepeatType: Int{
     case once = 0
-    case everySecond = 1
-    case everyMinute = 2
-    case hourly = 3
-    case daily = 4
-    case weekly = 5
-    case monthly = 6
-    case yearly = 7
+    case hourly = 1
+    case daily = 2
+    case weekly = 3
+    case monthly = 4
+    case yearly = 5
     func triggerComponents() -> Set<Calendar.Component> {
         switch self {
         case .once:
             return [.year,.month,.day,.hour,.minute,.second,]
-        case .everySecond:
-            return [.nanosecond]
-        case .everyMinute:
-            return [.second,]
         case .hourly:
             return [.minute,.second,]
         case .daily:
@@ -42,10 +36,6 @@ enum RepeatType: Int{
         switch self {
         case .once:
             return "Once"
-        case .everySecond:
-            return "EverySecond"
-        case .everyMinute:
-            return "EveryMinute"
         case .hourly:
             return "Hourly"
         case .daily:

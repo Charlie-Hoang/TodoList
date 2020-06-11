@@ -12,7 +12,6 @@ import RealmSwift
 class Label: Object{
     @objc dynamic var id = UUID().uuidString
     @objc dynamic var title: String?
-//    let tasks = List<Task>()
     
     public override static func primaryKey() -> String? { return "id" }
     

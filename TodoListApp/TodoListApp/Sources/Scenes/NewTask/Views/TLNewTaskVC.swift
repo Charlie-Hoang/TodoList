@@ -16,6 +16,7 @@ class TLNewTaskVC: BaseVC {
     
     var viewModel: TLNewTaskViewModel!
     
+    @IBOutlet weak var disableEditView: UIView!
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var fireDateTextField: UITextField!
     @IBOutlet weak var repeatTypeTextField: UITextField!
@@ -24,7 +25,7 @@ class TLNewTaskVC: BaseVC {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "New Task"
+        self.title = "Task"
         showSaveButton()
         binding()
         fetchData()
@@ -49,8 +50,6 @@ class TLNewTaskVC: BaseVC {
     }
     @IBAction func selectRepeatType(sender: UITextField) {
         let repeatTypePickerView = UIPickerView()
-        
-        
         sender.inputView = repeatTypePickerView
         viewModel.output.repeatTypeList.asObservable().bind(to: repeatTypePickerView.rx.itemTitles) { _, item in
             return "\(item.toString())"
@@ -59,11 +58,6 @@ class TLNewTaskVC: BaseVC {
             self.viewModel.input.repeatTypeSelectedIndex.accept(item.row)
         }).disposed(by: disposeBag)
         repeatTypePickerView.selectRow(self.viewModel.input.repeatTypeSelectedIndex.value, inComponent: 0, animated: true)
-//        viewModel.output.repeatTypeList.asObservable().subscribe(onNext:{date in
-//            self.fireDateTextField.text = date
-//            datePickerView.setDate(date.tlDate(), animated: true)
-//        }).disposed(by: disposeBag)
-//        datePickerView.addTarget(self, action: #selector(handleDatePicker(sender:)), for: .valueChanged)
     }
     
     @IBAction func addLabelBtnClicked(_ sender: Any) {
@@ -72,13 +66,13 @@ class TLNewTaskVC: BaseVC {
     
     @objc func handleDatePicker(sender: UIDatePicker){
         self.fireDateTextField.text = sender.date.tlString()
-        
     }
     
 }
-
+//private
 extension TLNewTaskVC{
     private func binding(){
+        viewModel.taskNotFinished.asObservable().bind(to: self.disableEditView.rx.isHidden).disposed(by: disposeBag)
         self.titleTextField.rx.text.orEmpty.bind(to: viewModel.output.title).disposed(by: disposeBag)
         viewModel.output.title.asObservable().bind(to: self.titleTextField.rx.text).disposed(by: disposeBag)
         self.fireDateTextField.rx.text.orEmpty.bind(to: viewModel.output.fireDateString).disposed(by: disposeBag)
@@ -108,7 +102,6 @@ extension TLNewTaskVC{
                 self.repeatTypeTextField.text = element.toString()
             }
         }.disposed(by: disposeBag)
-//            .bind(to: repeatTypeTextField.rx.text).disposed(by: disposeBag)
     }
     private func setupSelectedLabel(index: Int){
         var count = 0
@@ -188,6 +181,7 @@ extension TLNewTaskVC{
     }
     
 }
+//Edit Labels
 extension TLNewTaskVC{
     private func editLabels(){
         let alert = UIAlertController(title: "Edit Labels", message: nil, preferredStyle: .alert)

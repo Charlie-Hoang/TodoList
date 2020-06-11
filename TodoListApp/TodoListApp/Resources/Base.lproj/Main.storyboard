@@ -16,7 +16,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="XGm-dX-P12">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="654"/>
+                                <rect key="frame" x="0.0" y="56" width="414" height="718"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iMr-t5-WhS">
@@ -95,21 +95,31 @@
                                     <constraint firstItem="xU6-iI-T5H" firstAttribute="top" secondItem="oJR-Fu-AjR" secondAttribute="bottom" id="uYZ-pg-qQH"/>
                                 </constraints>
                             </view>
+                            <searchBar contentMode="redraw" placeholder="Search" translatesAutoresizingMaskIntoConstraints="NO" id="N7l-C2-P5B">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="doneAccessory" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </searchBar>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="XGm-dX-P12" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="0EX-jU-Fx7"/>
                             <constraint firstItem="XGm-dX-P12" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="0zl-gw-gbd"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="qoX-g2-AhQ" secondAttribute="bottom" id="D5f-hn-m8Z"/>
+                            <constraint firstItem="N7l-C2-P5B" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="E0y-Z8-F8Q"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="iMr-t5-WhS" secondAttribute="bottom" constant="10" id="LMn-TA-B4e"/>
                             <constraint firstItem="iMr-t5-WhS" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="RjD-OL-BmH"/>
                             <constraint firstItem="qoX-g2-AhQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="SjQ-Og-8ba"/>
                             <constraint firstItem="V8a-EG-yQi" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Z7G-Ho-wE9"/>
-                            <constraint firstItem="XGm-dX-P12" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="cjJ-AM-Lwe"/>
+                            <constraint firstItem="XGm-dX-P12" firstAttribute="top" secondItem="N7l-C2-P5B" secondAttribute="bottom" id="fsw-80-kJN"/>
                             <constraint firstItem="V8a-EG-yQi" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="lZb-NF-5qK"/>
-                            <constraint firstItem="iMr-t5-WhS" firstAttribute="top" secondItem="XGm-dX-P12" secondAttribute="bottom" constant="10" id="tfk-sD-LK5"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="XGm-dX-P12" secondAttribute="bottom" id="ppT-t7-Fyy"/>
+                            <constraint firstItem="N7l-C2-P5B" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="rPl-22-KSf"/>
                             <constraint firstItem="V8a-EG-yQi" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="uO6-ti-Xs2"/>
                             <constraint firstItem="qoX-g2-AhQ" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="wxC-bV-ZQh"/>
+                            <constraint firstItem="N7l-C2-P5B" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="y1G-C0-kZE"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -118,6 +128,7 @@
                         <outlet property="labelsPickerView" destination="pu3-ya-BeP" id="Fx0-em-bxO"/>
                         <outlet property="labelsPickerViewContainer" destination="V8a-EG-yQi" id="OD7-te-2rP"/>
                         <outlet property="newTaskButton" destination="iMr-t5-WhS" id="fYP-GE-PCn"/>
+                        <outlet property="searchBar" destination="N7l-C2-P5B" id="c4a-WX-3tL"/>
                         <outlet property="sortPickerView" destination="xU6-iI-T5H" id="Rcx-sx-VsL"/>
                         <outlet property="sortPickerViewContainer" destination="qoX-g2-AhQ" id="Oc6-Q9-qSl"/>
                         <outlet property="tableView" destination="XGm-dX-P12" id="UOL-Qy-NcY"/>
@@ -201,17 +212,24 @@
                                     <action selector="selectRepeatTypeWithSender:" destination="S21-mx-6VE" eventType="editingDidBegin" id="oqr-lI-P52"/>
                                 </connections>
                             </textField>
+                            <view hidden="YES" alpha="0.29999999999999999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MHq-QP-E0W">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="774"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="12y-hj-OcL" firstAttribute="trailing" secondItem="UaA-Vm-yOg" secondAttribute="trailing" constant="20" id="2Bg-C5-aWQ"/>
                             <constraint firstItem="DVV-QT-kTW" firstAttribute="centerY" secondItem="YvB-jJ-HgD" secondAttribute="centerY" id="5Ki-T4-a9A"/>
+                            <constraint firstItem="MHq-QP-E0W" firstAttribute="leading" secondItem="12y-hj-OcL" secondAttribute="leading" id="Ap3-6a-AV6"/>
                             <constraint firstItem="gjj-WI-GY7" firstAttribute="leading" secondItem="12y-hj-OcL" secondAttribute="leading" constant="20" id="CcS-Od-vA6"/>
+                            <constraint firstItem="MHq-QP-E0W" firstAttribute="bottom" secondItem="12y-hj-OcL" secondAttribute="bottom" id="HFW-jC-Ekl"/>
                             <constraint firstItem="2aF-fe-kYU" firstAttribute="top" secondItem="12y-hj-OcL" secondAttribute="top" constant="20" id="HaN-Mv-6zu"/>
                             <constraint firstItem="12y-hj-OcL" firstAttribute="trailing" secondItem="DVV-QT-kTW" secondAttribute="trailing" constant="20" id="OJJ-jz-aip"/>
                             <constraint firstItem="12y-hj-OcL" firstAttribute="trailing" secondItem="JbY-zD-E2I" secondAttribute="trailing" constant="20" id="QFc-ai-GdH"/>
                             <constraint firstItem="JbY-zD-E2I" firstAttribute="top" secondItem="UaA-Vm-yOg" secondAttribute="bottom" constant="20" id="SF5-9d-bQh"/>
                             <constraint firstItem="DVV-QT-kTW" firstAttribute="leading" secondItem="YvB-jJ-HgD" secondAttribute="trailing" constant="10" id="TJ1-dH-uBi"/>
+                            <constraint firstItem="MHq-QP-E0W" firstAttribute="top" secondItem="12y-hj-OcL" secondAttribute="top" id="UmI-QO-x0O"/>
                             <constraint firstItem="YvB-jJ-HgD" firstAttribute="leading" secondItem="12y-hj-OcL" secondAttribute="leading" constant="20" id="VeG-js-ZYi"/>
                             <constraint firstItem="UaA-Vm-yOg" firstAttribute="top" secondItem="gjj-WI-GY7" secondAttribute="bottom" constant="10" id="Zj1-iO-Xcz"/>
                             <constraint firstItem="UaA-Vm-yOg" firstAttribute="leading" secondItem="12y-hj-OcL" secondAttribute="leading" constant="20" id="deA-aE-66o"/>
@@ -219,6 +237,7 @@
                             <constraint firstItem="12y-hj-OcL" firstAttribute="trailing" secondItem="2aF-fe-kYU" secondAttribute="trailing" constant="20" id="fLn-6Y-fXR"/>
                             <constraint firstItem="12y-hj-OcL" firstAttribute="trailing" secondItem="gjj-WI-GY7" secondAttribute="trailing" constant="20" id="fY1-9p-DOV"/>
                             <constraint firstItem="gjj-WI-GY7" firstAttribute="top" secondItem="YvB-jJ-HgD" secondAttribute="bottom" constant="10" id="hrv-hf-ndc"/>
+                            <constraint firstItem="MHq-QP-E0W" firstAttribute="trailing" secondItem="12y-hj-OcL" secondAttribute="trailing" id="x92-Ho-SaK"/>
                             <constraint firstItem="JbY-zD-E2I" firstAttribute="leading" secondItem="12y-hj-OcL" secondAttribute="leading" constant="20" id="z6L-w0-jj2"/>
                             <constraint firstItem="2aF-fe-kYU" firstAttribute="leading" secondItem="12y-hj-OcL" secondAttribute="leading" constant="20" id="zqK-Bo-wMu"/>
                         </constraints>
@@ -226,6 +245,7 @@
                     </view>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <connections>
+                        <outlet property="disableEditView" destination="MHq-QP-E0W" id="UBV-ig-DOv"/>
                         <outlet property="fireDateTextField" destination="UaA-Vm-yOg" id="xy2-uk-Nj1"/>
                         <outlet property="imgsScollView" destination="gjj-WI-GY7" id="qyT-p4-eml"/>
                         <outlet property="labelsScollView" destination="YvB-jJ-HgD" id="Gm3-jx-Ljk"/>

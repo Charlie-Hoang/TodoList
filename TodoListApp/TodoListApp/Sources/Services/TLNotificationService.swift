@@ -8,7 +8,6 @@
 
 import Foundation
 import UserNotifications
-import UIKit
 
 
 
@@ -31,7 +30,8 @@ class TLNotificationService {
           }
         }
     }
-    func schedule(identifier: String?, body: String?, time: Date?, trigger: RepeatType, imgData: NSData?) {
+    func schedule(identifier: String?, body: String?, time: Date?, trigger: RepeatType, imgName: String?) {
+//        print("dt1: \(imgData?.count ?? 0)")
         remove(identifier: identifier)
         guard let time = time else {return}
         //content
@@ -40,8 +40,20 @@ class TLNotificationService {
         content.body = body ?? ""
         content.sound = UNNotificationSound.default
         content.badge = 1
-        if let imgData = imgData, let attachment = UNNotificationAttachment.create(imageFileIdentifier: identifier ?? "Default", data: imgData, options: nil){
-            content.attachments = [attachment]
+        
+        //attachment
+        if let imgName = imgName {
+            let filePath = imgName.components(separatedBy: ".")
+            let url = Bundle.main.url(forResource: filePath[0], withExtension: filePath[1])
+            do{
+                let attachment = try UNNotificationAttachment(identifier: "", url: url!, options: nil)
+                content.attachments = [attachment]
+            } catch {
+               print(error)
+            }
+//            if let attachment = UNNotificationAttachment.create(imageFileIdentifier: identifier ?? "Default", data: imgData!, options: nil){
+//                content.attachments = [attachment]
+//            }
         }
         //triger
         let triggerDate = Calendar.current.dateComponents(trigger.triggerComponents(), from: time)
