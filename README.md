@@ -1,5 +1,5 @@
 # TodoList
-To-do list application
+
 <div align="center">
 <img src="https://github.com/Charlie-Hoang/TodoList/blob/develop/imgs/1.png" width="207" height="368"/>  <img src="https://github.com/Charlie-Hoang/TodoList/blob/develop/imgs/12.png" width="207" height="368"/>
 </div>
@@ -31,7 +31,7 @@ Navigate to the project directory and Run `pod install`
 Open the .xcworkspace file
 
 ### STEP 5  
-Select target device , build and Run. Enjoy!
+Select target device , Build and Run. Enjoy!
 
 # Tools
 - RxSwift
